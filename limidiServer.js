@@ -22,7 +22,7 @@ app.get("/Heartbeat", (req, res) => {
 
 app.get("/MidiNote", (req, res) => {
     sendMidiNote(
-        req.query.isNoteOn ?? false,
+        (req.query.isNoteOn === "true") ? true : false,
         req.query.noteNumber ?? 0,
         req.query.velocity ?? 0
     )
